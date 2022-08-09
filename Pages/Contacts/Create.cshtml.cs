@@ -27,8 +27,6 @@ namespace ContactManager.Pages.Contacts
         [BindProperty]
         public Contact Contact { get; set; } = default!;
         
-
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
           if (!ModelState.IsValid || _context.Contact == null || Contact == null)

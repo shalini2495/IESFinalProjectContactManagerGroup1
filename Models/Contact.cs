@@ -6,7 +6,7 @@ namespace ContactManager.Models
     {
         public int ContactId { get; set; }
 
-        // user ID from AspNetUser table.
+        // user information from final_project table.
         public string? OwnerID { get; set; }
 
         public string? Name { get; set; }

@@ -19,13 +19,12 @@ namespace ContactManager.Models
             _context = context;
         }
 
-        // GET: Contacts
+        // APIs
         public async Task<IActionResult> Index()
         {
             return View(await _context.Contact.ToListAsync());
         }
 
-        // GET: Contacts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,15 +42,12 @@ namespace ContactManager.Models
             return View(contact);
         }
 
-        // GET: Contacts/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Contacts/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ContactId,Name,Address,City,State,Zip,Email")] Contact contact)
@@ -65,7 +61,7 @@ namespace ContactManager.Models
             return View(contact);
         }
 
-        // GET: Contacts/Edit/5
+        
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,9 +77,7 @@ namespace ContactManager.Models
             return View(contact);
         }
 
-        // POST: Contacts/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ContactId,Name,Address,City,State,Zip,Email")] Contact contact)
@@ -116,7 +110,7 @@ namespace ContactManager.Models
             return View(contact);
         }
 
-        // GET: Contacts/Delete/5
+        
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,7 +128,7 @@ namespace ContactManager.Models
             return View(contact);
         }
 
-        // POST: Contacts/Delete/5
+    
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
